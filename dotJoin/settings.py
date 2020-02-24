@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dotJoin',
+    'accounts',
+    'projects',
+    'projectTasks',
+    'teamMembers',
+    'userProfile',
     'django_extensions',
     'rest_framework',
 ]
@@ -52,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'dotJoin_django.urls'
+ROOT_URLCONF = 'dotJoin.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'dotJoin_django.wsgi.application'
+WSGI_APPLICATION = 'dotJoin.wsgi.application'
 
 
 # Database
