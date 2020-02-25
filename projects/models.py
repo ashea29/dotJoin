@@ -1,7 +1,4 @@
 from django.db import models
-from django.contrib.auth import get_user_model
-User = get_user_model()
-
 
 
 # Create your models here.
@@ -28,16 +25,18 @@ class Task(models.Model):
   startDate = models.DateField(max_length=25)
   dueDate = models.DateField(max_length=25)
   progress = models.CharField(max_length=2, choices=PROGRESS_CHOICES)
-  # teamMembers = models.ForeignKey(TeamMember, on_delete=models.CASCADE, related_name='tasks')
-  teamMembers = models.ManyToManyField(User, through='TeamMember')
+  teamMember = models.ForeignKey('TeamMember', on_delete=models.CASCADE, related_name='tasks')
+  # teamMembers = models.ManyToManyField(User, through='TeamMember')
 
   def __str__(self):
     return self.title
 
 
 class TeamMember(models.Model):
-  task = models.ForeignKey(Task, related_name="teamMembers")
-  user = models.ForeignKey(User, related_name="user_teams")
+  first_name = models.CharField(max_length=50)
+  last_name = models.CharField(max_length=50)
+  user = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name="teamMembers")
+  task = models.ForeignKey(Task, on_delete=models.CASCADE, related_name="teamMembers")
 
   def __str__(self):
     return self.user.username

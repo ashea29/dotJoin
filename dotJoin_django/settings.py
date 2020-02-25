@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'dotJoin.urls'
+ROOT_URLCONF = 'dotJoin_django.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'dotJoin.wsgi.application'
+WSGI_APPLICATION = 'dotJoin_django.wsgi.application'
 
 
 # Database
