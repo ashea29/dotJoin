@@ -6,6 +6,12 @@ from django.views.generic import TemplateView
 from django.views.generic import ListView
 from django.contrib.auth.models import User
 
+
+def user_list(request):
+  users = User.objects.all()
+  return render(request, 'listMembers.html', {'users': users})
+
+
 class ProfilePage(TemplateView):
     template_name = 'profile.html'
 
@@ -23,8 +29,3 @@ class HomePage(TemplateView):
     #     if request.user.is_authenticated():
     #         return HttpResponseRedirect(reverse("profile"))
     #     return super().get(request, *args, **kwargs)
-
-
-def user_list(request):
-  users = User.objects.all()
-  return render(request, 'listMembers.html', {'users': users})
