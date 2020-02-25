@@ -7,49 +7,49 @@
       <div class="title">
         {{ project.title }}
       </div>
-      <div className="projectButtons">
-        <button><i className="fas fa-plus"></i></button>
-        <button><i className="fas fa-pen"></i></button>
-        <button><i className="fas fa-times"></i></button>
+      <div class="projectButtons">
+        <button><i class="fas fa-plus"></i></button>
+        <button><i class="fas fa-pen"></i></button>
+        <button><i class="fas fa-times"></i></button>
       </div>
       <div class="taskList">
         <ul>
           {% for task in project.tasks %}
           <li>
             {{ task.title }}
-            <div className="dueDate">
+            <div class="dueDate">
               {{ task.dueDate }}
             </div>
 
             {% if task.progress == 'NS' %}
-              <div className="progress white">
+              <div class="progress white">
                 {{ task.progress }}
               </div>
             {% elif task.progress == 'ST' %}
-              <div className="progress red">
+              <div class="progress red">
                 {{ task.progress }}
               </div>
             {% elif task.progress == 'IP' %}
-              <div className="progress yellow">
+              <div class="progress yellow">
                 {{ task.progress }}
               </div>
             {% elif task.progress == 'AC' %}
-              <div className="progress green">
+              <div class="progress green">
                 {{ task.progress }}
               </div>
             {% elif task.progress == 'CM' %}
-              <div className="progress blue">
+              <div class="progress blue">
                 {{ task.progress }}
               </div>
             {% endif %}
 
             {% for teamMember in task.teamMembers %}
-              <div className="teamMember">
+              <div class="teamMember">
                 {{ teamMember }}
               </div>
             {% endfor %}
-            <div className="deleteButton">
-              <i className="fas fa-times"></i>
+            <div class="deleteButton">
+              <i class="fas fa-times"></i>
             </div>
           </li>
           {% endfor %}
@@ -57,7 +57,7 @@
       </div>
     </div>
   </div>
-  
+
 {% endfor %}
 
 {% endblock %}

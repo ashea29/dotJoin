@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-{% load staticfiles %}
+{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -20,22 +20,22 @@
 </head>
 <body>
 
-  <div className="header">
+  <div class="header">
       {% if user.is_authenticated %}
         <a href="{% url 'profile' %}">
-          <div className="logo">
+          <div class="logo">
               <img src="{% static 'logo.png' %}" alt="logo">
           </div>
         </a>
       {% else %}
         <a href="{% url 'home' %}">
-          <div className="logo">
+          <div class="logo">
               <img src="{% static 'logo.png' %}" alt="logo">
           </div>
         </a>
       {% endif %}
 
-      <div className="nav">
+      <div class="nav">
         {% if user.is_authenticated %}
           <ul>
             <li>
@@ -48,6 +48,11 @@
                 PROJECTS
               </a>
             </li>
+            <li>
+              <a href="#">
+                LOGOUT
+              </a>
+            </li>
             {% comment %} <li>
               <NavLink to="/team-members">
                 TEAM MEMBERS
@@ -55,15 +60,32 @@
             </li> {% endcomment %}
           </ul>
         {% else %}
+          <ul>
+            <li>
+              <a href="{% url "user_list" %}">
+                MEMBERS
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                LOGIN
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                SIGN UP
+              </a>
+            </li>
+          </ul>
+        {% endif %}
 
       </div>
   </div>
   
-  <div class="container mycontent">
     {% block content %}
 
     {% endblock %}
-  </div>
+  
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

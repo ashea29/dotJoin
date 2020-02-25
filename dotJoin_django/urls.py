@@ -23,7 +23,7 @@ urlpatterns = [
     path('profile/', views.ProfilePage.as_view(), name="profile"),
     path('thanks/', views.ThanksPage.as_view(), name="thanks"),
     path('admin/', admin.site.urls),
-    path('members/', views.ListMembers.as_view(), name="all_members"),
+    path('members/', views.user_list, name="user_list"),
     # path('accounts/', include(('accounts.urls', 'accounts'), namespace="accounts")),
     path('projects/', include(('projects.urls', 'projects'), namespace="projects")),
 ]
