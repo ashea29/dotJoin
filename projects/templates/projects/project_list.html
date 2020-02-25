@@ -8,9 +8,13 @@
         {{ project.title }}
       </div>
       <div class="projectButtons">
-        <a href="{% url 'project_create' %}"><button><i class="fas fa-plus"></i></button></a>
-        <a href="{% url 'project_edit' %}"><button><i class="fas fa-pen"></i></button></a>
-        <ahref="{% url 'project_delete' %}"><button><i class="fas fa-times"></i></button></a>
+        <a href="{% url 'projects:project_create' %}"><button><i class="fas fa-plus"></i></button>
+        {% comment %} </a> {% endcomment %}
+        {% comment %} <a href="{% url 'projects:project_edit' %}"> {% endcomment %}
+        <button><i class="fas fa-pen"></i></button>
+        {% comment %} </a> {% endcomment %}
+        {% comment %} <a href="{% url 'project:project_delete' %}"> {% endcomment %}
+        <button><i class="fas fa-times"></i></button></a>
       </div>
       <div class="taskList">
         <ul>
@@ -64,10 +68,10 @@
                 75%
               </div>
             </div>
-            <div class="teamMember">
+            <div class="teamMember" style="background-color: #3972a3">
               JB
             </div>
-            <div class="teamMember">
+            <div class="teamMember" style="background-color: #3972a3">
               AS
             </div>
           </div>
@@ -78,7 +82,7 @@
                 60%
               </div>
             </div>
-            <div class="teamMember">
+            <div class="teamMember" style="background-color: #3972a3">
               AS
             </div>
           </div>
@@ -89,7 +93,7 @@
                 35%
               </div>
             </div>
-            <div class="teamMember">
+            <div class="teamMember" style="background-color: #3972a3">
               AS
             </div>
           </div>

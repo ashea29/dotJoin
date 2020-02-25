@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
-from .models import Project, Task
+from .models import Project
 from .forms import ProjectForm
 
 
@@ -39,5 +39,5 @@ def project_edit(request, pk):
 
 @login_required
 def project_delete(request, pk):
-    Project.objects.get(id=pk).delete()
+    Project.objects.get(pk=pk).delete()
     return redirect('project_list')

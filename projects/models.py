@@ -26,7 +26,6 @@ class Task(models.Model):
   dueDate = models.DateField(max_length=25)
   progress = models.CharField(max_length=2, choices=PROGRESS_CHOICES)
   teamMember = models.ForeignKey('TeamMember', on_delete=models.CASCADE, related_name='tasks', blank=True, null=True)
-  # teamMembers = models.ManyToManyField(User, through='TeamMember')
 
   def __str__(self):
     return self.title

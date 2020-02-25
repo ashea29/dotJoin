@@ -14,7 +14,7 @@ class TaskForm(forms.ModelForm):
 
   class Meta:
     model = Task
-    fields = ('title', 'startDate', 'duration', 'progress', 'project',)
+    fields = ('title', 'startDate', 'dueDate', 'progress', 'project',)
 
 
 class TeamMemberForm(forms.ModelForm):
