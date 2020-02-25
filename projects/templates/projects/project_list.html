@@ -8,9 +8,9 @@
         {{ project.title }}
       </div>
       <div class="projectButtons">
-        <button><i class="fas fa-plus"></i></button>
-        <button><i class="fas fa-pen"></i></button>
-        <button><i class="fas fa-times"></i></button>
+        <a href="{% url 'project_create' %}"><button><i class="fas fa-plus"></i></button></a>
+        <a href="{% url 'project_edit' %}"><button><i class="fas fa-pen"></i></button></a>
+        <ahref="{% url 'project_delete' %}"><button><i class="fas fa-times"></i></button></a>
       </div>
       <div class="taskList">
         <ul>

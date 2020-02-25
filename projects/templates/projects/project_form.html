@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if '/new' in request.path %}
+    <br><br><h1>New Project</h1>
+  {% elif '/edit' in request.path %}
+    <br><br><h1>Edit Project</h1>
+  {% endif %}
+    <form method="POST" class="project-form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
