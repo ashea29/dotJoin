@@ -14,50 +14,90 @@
       </div>
       <div class="taskList">
         <ul>
-          {% for task in project.tasks %}
           <li>
-            {{ task.title }}
-            <div class="dueDate">
-              {{ task.dueDate }}
-            </div>
-
-            {% if task.progress == 'NS' %}
-              <div class="progress white">
-                {{ task.progress }}
-              </div>
-            {% elif task.progress == 'ST' %}
-              <div class="progress red">
-                {{ task.progress }}
-              </div>
-            {% elif task.progress == 'IP' %}
-              <div class="progress yellow">
-                {{ task.progress }}
-              </div>
-            {% elif task.progress == 'AC' %}
-              <div class="progress green">
-                {{ task.progress }}
-              </div>
-            {% elif task.progress == 'CM' %}
-              <div class="progress blue">
-                {{ task.progress }}
-              </div>
-            {% endif %}
-
-            {% for teamMember in task.teamMembers %}
-              <div class="teamMember">
-                {{ teamMember }}
-              </div>
-            {% endfor %}
+            First task
             <div class="deleteButton">
-              <i class="fas fa-times"></i>
+              &#10006;
             </div>
           </li>
-          {% endfor %}
+          
+          <li>
+            Second task
+            <div class="deleteButton">
+              &#10006;
+            </div>
+          </li>
+          
+          <li>
+            Third task
+            <div class="deleteButton">
+              &#10006;
+            </div>
+          </li>
         </ul>
       </div>
     </div>
-  </div>
 
+    <div class="projectRight">
+      <div class="timeline">
+        <div class="months">
+          February
+        </div>
+        <div class="days">
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+          </ul>
+        </div>
+        <div class="tasks">
+          <div class="task">
+            <div class="taskBar">
+              <div class="progress green">
+                75%
+              </div>
+            </div>
+            <div class="teamMember">
+              JB
+            </div>
+            <div class="teamMember">
+              AS
+            </div>
+          </div>
+
+          <div class="task" style="margin-left: 180px;">
+            <div class="taskBar">
+              <div class="progress yellow">
+                60%
+              </div>
+            </div>
+            <div class="teamMember">
+              AS
+            </div>
+          </div>
+
+          <div class="task" style="margin-left: 210px;">
+            <div class="taskBar">
+              <div class="progress red">
+                35%
+              </div>
+            </div>
+            <div class="teamMember">
+              AS
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 {% endfor %}
 
 {% endblock %}

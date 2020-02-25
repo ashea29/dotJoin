@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
-from .models import Project
+from .models import Project, Task
 # from .forms import ArtistForm, SongForm
 
 
@@ -10,7 +10,9 @@ def project_list(request):
     projects = Project.objects.all()
     return render(request, 'projects/project_list.html', {'projects': projects})
 
-
+def task_list(request):
+    tasks = Task.objects.all()
+    return render(request, 'projects/project_list.html', {'tasks': tasks})
 # def artist_detail(request, pk):
 #     artist = Artist.objects.get(id=pk)
 #     return render(request, 'tunr/artist_detail.html', {'artist': artist})
@@ -83,15 +85,3 @@ def project_list(request):
 # def song_delete(request, pk):
 #     Song.objects.get(id=pk).delete()
 #     return redirect('song_list')
-
-
-# def add_favorite(request, song_id):
-#     song = Song.objects.get(id=song_id)
-#     Favorite.objects.create(song=song, user=request.user)
-#     return redirect('artist_detail', pk=song.artist.pk)
-
-
-# def remove_favorite(request, song_id):
-#     song = Song.objects.get(id=song_id)
-#     Favorite.objects.get(song=song, user=request.user).delete()
-#     return redirect('artist_detail', pk=song.artist.pk)

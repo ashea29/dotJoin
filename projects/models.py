@@ -25,7 +25,7 @@ class Task(models.Model):
   startDate = models.DateField(max_length=25)
   dueDate = models.DateField(max_length=25)
   progress = models.CharField(max_length=2, choices=PROGRESS_CHOICES)
-  teamMember = models.ForeignKey('TeamMember', on_delete=models.CASCADE, related_name='tasks', blank=True)
+  teamMember = models.ForeignKey('TeamMember', on_delete=models.CASCADE, related_name='tasks', blank=True, null=True)
   # teamMembers = models.ManyToManyField(User, through='TeamMember')
 
   def __str__(self):
@@ -33,8 +33,8 @@ class Task(models.Model):
 
 
 class TeamMember(models.Model):
-  first_name = models.CharField(max_length=50)
-  last_name = models.CharField(max_length=50)
+  first_name = models.CharField(max_length=50, blank=True, null=True)
+  last_name = models.CharField(max_length=50, blank=True, null=True)
   user = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name="teamMembers")
   task = models.ForeignKey(Task, on_delete=models.CASCADE, related_name="teamMembers")
 
