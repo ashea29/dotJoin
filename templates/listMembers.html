@@ -10,19 +10,12 @@
 
         {% for user in users %}
         <div class="profile bg-light">
-          {% comment %} <img
-            class="round-img"
-            src=""
-            alt=""
-          /> {% endcomment %}
-          <i class="fas fa-user round-img"></i>
+          <i class="fas fa-user" style="font-size: 40px"></i>
           <div>
-            <h2>{{user.first_name}} {{user.last_name}}</h2>
-            <p>Developer at Microsoft</p>
-            <p>Seattle, WA</p>
-            <a href="profile.html" class="btn btn-primary">View Profile</a>
+            <h2>{{user.username}}</h2>
+            <p>Developer at Charter</p>
+            <p>Greenwood Village, CO</p> 
           </div>
-
           <ul>
             <li class="text-primary">
               <i class="fas fa-check"></i> HTML
