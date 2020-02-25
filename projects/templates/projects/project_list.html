@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for project in projects %}
+  <div class="project">
+    <div class="projectLeft">
+      <div class="title">
+        {{ project.title }}
+      </div>
+      <div className="projectButtons">
+        <button><i className="fas fa-plus"></i></button>
+        <button><i className="fas fa-pen"></i></button>
+        <button><i className="fas fa-times"></i></button>
+      </div>
+      <div class="taskList">
+        <ul>
+          {% for task in project.tasks %}
+          <li>
+            {{ task.title }}
+            <div className="dueDate">
+              {{ task.dueDate }}
+            </div>
+
+            {% if task.progress == 'NS' %}
+              <div className="progress white">
+                {{ task.progress }}
+              </div>
+            {% elif task.progress == 'ST' %}
+              <div className="progress red">
+                {{ task.progress }}
+              </div>
+            {% elif task.progress == 'IP' %}
+              <div className="progress yellow">
+                {{ task.progress }}
+              </div>
+            {% elif task.progress == 'AC' %}
+              <div className="progress green">
+                {{ task.progress }}
+              </div>
+            {% elif task.progress == 'CM' %}
+              <div className="progress blue">
+                {{ task.progress }}
+              </div>
+            {% endif %}
+
+            {% for teamMember in task.teamMembers %}
+              <div className="teamMember">
+                {{ teamMember }}
+              </div>
+            {% endfor %}
+            <div className="deleteButton">
+              <i className="fas fa-times"></i>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+{% endfor %}
+
+{% endblock %}
