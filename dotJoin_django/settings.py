@@ -1,3 +1,5 @@
+import django_heroku
+
 """
 Django settings for dotJoin_django project.
 
@@ -129,3 +131,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 LOGIN_REDIRECT_URL = "user_list"
 LOGOUT_REDIRECT_URL = "thanks"
+
+
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())

@@ -1,0 +1,1 @@
+web: gunicorn dotjoin.wsgi --log-file -
