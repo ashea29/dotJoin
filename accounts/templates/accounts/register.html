@@ -3,12 +3,12 @@
 
 {% block content %}
 
-<form method="post" action="{% url 'signup' %}">
+<form method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
     {% comment %} {{form.as_p}} {% endcomment %}
 
-    <input type="submit" value="Sign Up" />
+    <input type="submit" value="Register  " />
     <input type="hidden" name="next" value="{{ next }}" />
 </form>
 
