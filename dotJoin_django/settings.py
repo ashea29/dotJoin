@@ -80,11 +80,8 @@ WSGI_APPLICATION = 'dotJoin_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dotjoin',
-        'USER': 'userprime',
-        'PASSWORD': 'dotjoin',
-        'HOST': 'localhost'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 

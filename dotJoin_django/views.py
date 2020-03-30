@@ -7,9 +7,9 @@ from django.views.generic import ListView
 from django.contrib.auth.models import User
 
 
-# def user_list(request):
-#   users = User.objects.all()
-#   return render(request, 'listMembers.html', {'users': users})
+def user_list(request):
+  users = User.objects.all()
+  return render(request, 'listMembers.html', {'users': users})
 
 
 class ProfilePage(TemplateView):
@@ -18,9 +18,9 @@ class ProfilePage(TemplateView):
 class ThanksPage(TemplateView):
     template_name = 'thanks.html'
 
-class ListMembers(ListView):
-    model = User
-    template_name = 'listMembers.html'
+# class ListMembers(ListView):
+#     model = User
+#     template_name = 'listMembers.html'
 
 class HomePage(TemplateView):
     template_name = "index.html"
