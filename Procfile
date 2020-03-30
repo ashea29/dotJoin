@@ -1,1 +1,1 @@
-web: gunicorn dotjoin.wsgi --log-file -
+web: gunicorn dotJoin_django.wsgi --log-file -
